@@ -7,7 +7,7 @@ from PIL import Image
 from torchvision.models import ResNet18_Weights
 
 from models.model_blood_cells import load_model
-
+st.set_page_config(page_title="Классификация клеток крови")
 
 # ===================== КОНСТАНТЫ =====================
 
@@ -18,17 +18,6 @@ weights = ResNet18_Weights.DEFAULT
 transform = weights.transforms()
 
 CLASS_NAMES = ["EOSINOPHIL", "LYMPHOCYTE", "MONOCYTE", "NEUTROPHIL"]
-
-# Статистика датасета (вставь реальные значения)
-DATASET_STATS = {
-    "EOSINOPHIL": 2497,
-    "LYMPHOCYTE": 2483,
-    "MONOCYTE": 2478,
-    "NEUTROPHIL": 2499
-}
-
-FINAL_F1 = 0.82  # вставь своё реальное значение
-
 
 # ===================== ЗАГРУЗКА МОДЕЛИ =====================
 
@@ -76,19 +65,6 @@ def render():
 
     model = get_model()
 
-    # -------- Информация о модели --------
-    st.subheader("Информация о модели")
-
-    total_images = sum(DATASET_STATS.values())
-
-    st.write(f"Общее количество изображений в датасете: **{total_images}**")
-
-    for cls, count in DATASET_STATS.items():
-        st.write(f"{cls}: {count}")
-
-    st.write(f"Итоговая F1-score на тестовой выборке: **{FINAL_F1}**")
-
-    st.divider()
 
     # -------- Загрузка изображений --------
     st.subheader("Загрузка изображений")
@@ -138,3 +114,8 @@ def render():
             st.divider()
 
         st.success(f"Общее время обработки: {total_time:.4f} секунд")
+
+
+
+if __name__ == "__main__":
+    render()
