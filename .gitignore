@@ -208,3 +208,24 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Kaggle
+kaggle.json
+.kaggle/
+
+# Data
+data/
+dataset2-master/
+*.zip
+
+# Python env
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Torch cache
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
