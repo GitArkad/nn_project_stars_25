@@ -19,7 +19,7 @@ def load_model():
     model = models.resnet18(weights=None)
     model.fc = nn.Linear(512, 6)
     model.load_state_dict(
-        torch.load("../models/intel_model.pt", map_location=torch.device("cpu"))
+        torch.load("models/intel_model.pt", map_location=torch.device("cpu"))
     )
     model.eval()
     return model

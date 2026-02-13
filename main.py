@@ -41,8 +41,8 @@ def show_main_page():
 # Здесь мы связываем файлы из папки pages/ с красивыми названиями
 main_page = st.Page(show_main_page, title="Главная", icon="🏠", default=True)
 sports_page = st.Page("pages/1_sports_images_classif.py", title="Виды спорта", icon="⚽")
-blood_page = st.Page("pages/blood_cells.py", title="Клетки крови", icon="🔬")
-intel_page = st.Page("pages/intel_scenes.py", title="Природные сцены", icon="🏞️")
+blood_page = st.Page("pages/2_Классификация клеток крови.py", title="Клетки крови", icon="🔬")
+intel_page = st.Page("pages/3_Intel_image_classification.py", title="Природные сцены", icon="🏞️")
 summary_page = st.Page("pages/4_summary.py", title="Сводная информация", icon="📊")
 
 # 3. Настраиваем навигацию
